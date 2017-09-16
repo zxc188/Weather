@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string-array name="city">
+        <item>北京</item>
+        <item>上海</item>
+        <item>广州</item>
+        <item>银川</item>
+        <item>深圳</item>
+        <item>南京</item>
+        <item>苏州</item>
+        <item>石家庄</item>
+        <item>南宁</item>
+        <item>西安</item>
+        <item>哈尔滨</item>
+        <item>呼和浩特</item>
+        <item>天津</item>
+        <item>武汉</item>
+        <item>成都</item>
+        <item>厦门</item>
+    </string-array>
+</resources>

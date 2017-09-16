@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:id="@+id/cv_item"
+    card_view:cardCornerRadius="4dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+<LinearLayout android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tx_week"
+        android:textAlignment="center"
+        android:layout_weight="1" />
+
+    <TextView
+        android:text=""
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tx_date"
+        android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tx_one" />
+
+        <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tx_two" />
+
+        <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tx_three" />
+
+        <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tx_four" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tx_five" />
+    </LinearLayout>
+</LinearLayout>
+</android.support.v7.widget.CardView>
