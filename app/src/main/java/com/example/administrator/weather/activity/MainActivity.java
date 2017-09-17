@@ -1,6 +1,7 @@
 package com.example.administrator.weather.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
@@ -40,13 +41,14 @@ public class MainActivity extends AppCompatActivity {
     private Cursor cursor;
     private TextView tx_qing;
     private TextView tx_du;
-    private static boolean first = true;
+    public static boolean first;
     private TextView tx_city;
     private RecyclerView recyclerView;
     private LinkedList<Weather_Item> weather_items;
     private My_RecyAdapter my_recyAdapter;
     private TextView tx_ref;
-
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         tx_du = (TextView) findViewById(R.id.tx_du);
         recyclerView = (RecyclerView) findViewById(R.id.recy);
         tx_ref = (TextView) findViewById(R.id.tx_ref);
+        sharedPreferences = getSharedPreferences("MAIN", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         weather_items = new LinkedList<>();
@@ -172,7 +176,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id) {
             case R.id.menu_weather:
-                if (first) {
+                if (sharedPreferences.getBoolean("first", true)) {
+                    editor.putBoolean("first", false);
+                    editor.apply();
                     dbUtil.Add_all();
                     first = false;
                 }
